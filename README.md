@@ -26,6 +26,7 @@ This repo is based in:
 - [uuid](https://www.npmjs.com/package/uuid)
 - [ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
 - [reflect-metadata](https://www.npmjs.com/package/reflect-metadata)
+- [multer](https://www.npmjs.com/package/multer)
 - ... _More_
 
 ## 🚀 Getting Started
