@@ -4,6 +4,23 @@
 
 This is a challenge (the backend part) project from [Tog Design](https://tog.design) developer team.
 
+## 📷 Some screenshots
+__Posting a article__
+<p align="center">
+ <img src=".github/tog_post_ok.png" alt="Post okay!" />
+</p>
+
+__Getting all the articles__
+<p align="center">
+ <img src=".github/0_tog_get_articles.png" alt="Getting articles" />
+</p>
+
+__Managing a SQL database__
+<p align="center">
+ <img src=".github/tog_database_table.png" alt="Database using SQlite" />
+</p>
+
+
 ## ⭐ Objectives
 
 - Get the challenge done.
