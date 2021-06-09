@@ -13,6 +13,9 @@ class Article {
   content: string;
 
   @Column()
+  url_image: string;
+  
+  @Column()
   author: string;
 
   @Column({ array: true })
