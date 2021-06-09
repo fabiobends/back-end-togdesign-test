@@ -1,42 +1,42 @@
 import { NextFunction, Request, Response, Router } from "express";
+import multer from "multer";
+import multerConfig from "./config/multer";
+import { ArticlesController } from "./controllers/ArticlesController";
 
+const upload = multer(multerConfig);
 const router = Router();
+const articlesController = new ArticlesController();
 
 router.get("/", (request: Request, response: Response, _next: NextFunction) => {
   response.json({ message: "hello from backend" });
 });
 
-router.get("dashboard", (request: Request, response: Response) => {
+router.get("/dashboard", (request: Request, response: Response) => {
   // TODO: fake stats
 });
 
-router.get("purchased-articles/", (request: Request, response: Response) => {
+router.get("/purchased-articles", (request: Request, response: Response) => {
   // TODO: fake stats
 });
 
-router.get("articles-you-wrote/", (request: Request, response: Response) => {
+router.get("/articles-you-wrote", (request: Request, response: Response) => {
   // TODO: fake stats
   // I may add an author id...
 });
 
-router.post("article/", (request: Request, response: Response) => {
-  // TODO: controller for this
-});
+// create new article
+router.post("/article", upload.single("image"), articlesController.create);
 
-router.get("article/:id", (request: Request, response: Response) => {
-  // TODO: controller for this
-});
+// get a specific article
+router.get("/article/:id", articlesController.findArticle);
 
-router.get("articles/", (request: Request, response: Response) => {
-  // TODO: controller for this
-});
+// get all articles
+router.get("/articles", articlesController.show);
 
-router.get("article/:id/image", (request: Request, response: Response) => {
-  // TODO: return image asset through url
-});
+// get image through server
+router.get("/assets/:filename", articlesController.findImage);
 
-router.get("avatar/", (request: Request, response: Response) => {
-  // TODO: get simple avatar
-});
+// get simple avatar
+router.get("/avatar", articlesController.findAvatar);
 
 export { router };
