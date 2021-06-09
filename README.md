@@ -12,7 +12,7 @@ __Posting a article__
 
 __Getting all the articles__
 <p align="center">
- <img src=".github/0_tog_get_articles.png" alt="Getting articles" />
+ <img src=".github/tog_get_articles.png" alt="Getting articles" />
 </p>
 
 __Managing a SQL database__
