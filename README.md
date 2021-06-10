@@ -44,6 +44,7 @@ This repo is based in:
 - [ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
 - [reflect-metadata](https://www.npmjs.com/package/reflect-metadata)
 - [multer](https://www.npmjs.com/package/multer)
+- [cors](https://www.npmjs.com/package/cors)
 - ... _More_
 
 ## 🚀 Getting Started
