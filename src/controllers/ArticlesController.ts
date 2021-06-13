@@ -3,14 +3,17 @@ import path from "path";
 import { getCustomRepository } from "typeorm";
 import { ArticlesRepository } from "../repositories/ArticlesRepository";
 class ArticlesController {
-
   async create(request: Request, response: Response) {
     let url_image = "";
 
     if (request.file) {
       url_image = `http://localhost:3333/assets/${request.file.filename}`;
     } else {
-      url_image = `https://picsum.photos/824/478`; // random imagem
+      if (request.body.image) {
+        url_image = `http://localhost:3333/assets/${request.body.image.name}`;
+      } else {
+        url_image = `https://picsum.photos/824/478`; // random imagem
+      }
     }
 
     const { title, content, price, sales, publisher, author, themes } =
@@ -35,6 +38,7 @@ class ArticlesController {
       console.log(e);
     }
 
+    console.log(response.json(article));
     return response.status(201).json(article);
   }
 
