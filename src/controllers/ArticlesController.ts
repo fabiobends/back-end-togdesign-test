@@ -9,11 +9,7 @@ class ArticlesController {
     if (request.file) {
       url_image = `http://localhost:3333/assets/${request.file.filename}`;
     } else {
-      if (request.body.image) {
-        url_image = `http://localhost:3333/assets/${request.body.image.name}`;
-      } else {
-        url_image = `https://picsum.photos/824/478`; // random imagem
-      }
+        url_image = `https://picsum.photos/824/478`; // random image
     }
 
     const { title, content, price, sales, publisher, author, themes } =
@@ -44,7 +40,8 @@ class ArticlesController {
 
   async findArticle(request: Request, response: Response) {
     const articlesRepository = getCustomRepository(ArticlesRepository);
-
+    
+    console.log(request.params.id);
     const article = await articlesRepository.findOne(request.params.id);
 
     return response.json(article);
